@@ -85,6 +85,12 @@ provisioner "shell" {
   ]
 }
 
+post-processor "shell-local" {
+    inline = [
+      "VBoxManage modifyvm {{.BuildName}} --nic1 nat"
+    ]
+  }
+
 
 
 
